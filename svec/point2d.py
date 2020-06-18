@@ -32,3 +32,7 @@ class Point2d:
     def ints(self) -> Tuple[int, int]:
         x, y = self.coords()
         return int(x), int(y)
+
+    def __repr__(self) -> str:
+        x, y = self.coords()
+        return f'Point2d({x}, {y})'

@@ -27,3 +27,7 @@ class Vector2d:
 
     def coords(self) -> Tuple[ScalarType, ScalarType]:
         return self.x, self.y
+
+    def __repr__(self) -> str:
+        x, y = self.coords()
+        return f'Vector2d({x}, {y})'
