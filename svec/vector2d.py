@@ -31,3 +31,6 @@ class Vector2d:
     def __repr__(self) -> str:
         x, y = self.coords()
         return f'Vector2d({x}, {y})'
+
+    def __eq__(self, other: 'Vector2d') -> bool:
+        return (self.x, self.y) == (other.x, other.y)

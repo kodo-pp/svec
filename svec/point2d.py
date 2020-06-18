@@ -36,3 +36,6 @@ class Point2d:
     def __repr__(self) -> str:
         x, y = self.coords()
         return f'Point2d({x}, {y})'
+
+    def __eq__(self, other: Point2d) -> bool:
+        return self.vec == other.vec
