@@ -32,5 +32,8 @@ class Vector2d:
         x, y = self.coords()
         return f'Vector2d({x}, {y})'
 
-    def __eq__(self, other: 'Vector2d') -> bool:
-        return (self.x, self.y) == (other.x, other.y)
+    def __eq__(self, other: object) -> bool:
+        return isinstance(other, Vector2d) and (self.x, self.y) == (other.x, other.y)
+
+    def __hash__(self) -> int:
+        return hash(('vector2d', self.coords())) + 395

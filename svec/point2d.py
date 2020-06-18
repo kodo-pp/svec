@@ -37,5 +37,8 @@ class Point2d:
         x, y = self.coords()
         return f'Point2d({x}, {y})'
 
-    def __eq__(self, other: Point2d) -> bool:
-        return self.vec == other.vec
+    def __eq__(self, other: object) -> bool:
+        return isinstance(other, Point2d) and self.vec == other.vec
+
+    def __hash__(self) -> int:
+        return hash(('point2d', self.coords())) + 197
