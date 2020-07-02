@@ -1,13 +1,13 @@
 from svec.common import ScalarType
 from svec.vector2d import Vector2d
 
-from typing import Tuple, overload
+from typing import Tuple, Union, overload
 
 
 class Point2d:
     __slots__ = ('vec',)
 
-    def __init__(self, vec: Vector2d):
+    def __init__(self, vec: Vector2d) -> None:
         self.vec = vec
 
     def __add__(self, other: 'Vector2d') -> 'Point2d':
@@ -21,7 +21,7 @@ class Point2d:
     def __sub__(self, other: 'Point2d') -> 'Vector2d':
         ...
 
-    def __sub__(self, other):
+    def __sub__(self, other: Union['Vector2d', 'Point2d']) -> Union['Vector2d', 'Point2d']:
         if isinstance(other, Vector2d):
             return self + (-other)
         return other.vec - self.vec

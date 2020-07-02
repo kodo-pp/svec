@@ -6,7 +6,7 @@ from typing import Tuple
 class Vector2d:
     __slots__ = ('x', 'y')
 
-    def __init__(self, x: ScalarType, y: ScalarType):
+    def __init__(self, x: ScalarType, y: ScalarType) -> None:
         self.x = x
         self.y = y
 
