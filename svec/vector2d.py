@@ -42,7 +42,7 @@ class Vector2d:
     def __hash__(self) -> int:
         return hash(('vector2d', self.coords())) + 395
 
-    def dot(self, other: Vector2d) -> float:
+    def dot(self, other: 'Vector2d') -> float:
         return self.x * other.x + self.y * other.y
 
     def length_sq(self) -> float:
@@ -51,7 +51,7 @@ class Vector2d:
     def __abs__(self) -> float:
         return sqrt(self.length_sq())
 
-    def normalized(self) -> Vector2d:
+    def normalized(self) -> 'Vector2d':
         length = abs(self)
         if length == 0.0:
             raise ZeroDivisionError('Cannot normalize the zero vector')
