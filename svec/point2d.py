@@ -24,7 +24,7 @@ class Point2d:
     def __sub__(self, other: Union['Vector2d', 'Point2d']) -> Union['Vector2d', 'Point2d']:
         if isinstance(other, Vector2d):
             return self + (-other)
-        return other.vec - self.vec
+        return self.vec - other.vec
 
     def coords(self) -> Tuple[ScalarType, ScalarType]:
         return self.vec.coords()
