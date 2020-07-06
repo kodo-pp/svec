@@ -14,4 +14,5 @@ setup(
     packages            = find_packages(),
     install_requires    = [],
     package_data        = {'svec': ['py.typed']},
+    tests_require       = ['pytest']
 )
